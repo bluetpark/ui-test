@@ -5,9 +5,18 @@
 <meta name="viewport" content="user-scalable=no, width=device-width">
 <title>test</title>
 <style>
+body{margin:0;font-size:14px;}
+.test-wrap{
+	padding:20px;
+	border-top:1px solid #ccc;
+}
+.test-wrap:first-child{
+	border-top:0;
+}
 .input-wrap{
 	display:inline-block;
 	position:relative;
+	height:20px;
 }
 input[type=checkbox],input[type=radio]{
 	display:block;
@@ -16,9 +25,10 @@ input[type=checkbox],input[type=radio]{
 	left:0;
 	width:20px;
 	height:20px;
+	margin:0;
 	border:0;
 	border-radius:0;
-	background:transparent;
+	background:gold;
 	-webkit-appearance:none;
 	appearance:none;
 }
@@ -26,29 +36,31 @@ input[type=checkbox]:checked,input[type=radio]:checked{
 	background-color:green;
 }
 label{
+	display:block;
 	padding-left:24px;
-	vertical-align:top;
+	line-height:20px;
 }
 </style>
 </head>
 <body>
 
-	<div class="input-wrap input-checkbox">
-		<input type="checkbox" id="test001">
-		<label for="test001">체크박스</label>
+	<div class="test-wrap">
+		<div class="input-wrap input-checkbox">
+			<input type="checkbox" id="test001">
+			<label for="test001">체크박스</label>
+		</div>
+	</div>
+	<div class="test-wrap">
+		<div class="input-wrap input-radio">
+			<input type="radio" id="test002_1" name="test002" checked>
+			<label for="test002_1">라디오1</label>
+		</div>
+		<div class="input-wrap input-radio">
+			<input type="radio" id="test002_2" name="test002">
+			<label for="test002_2">라디오2</label>
+		</div>
 	</div>
 
-	<br>
-
-	<div class="input-wrap input-radio">
-		<input type="radio" id="test002_1" name="test002" checked>
-		<label for="test002_1">라디오1</label>
-	</div>
-
-	<div class="input-wrap input-radio">
-		<input type="radio" id="test002_2" name="test002">
-		<label for="test002_2">라디오2</label>
-	</div>
 
 </body>
 </html>
