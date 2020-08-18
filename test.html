@@ -5,7 +5,14 @@
 <meta name="viewport" content="user-scalable=no, width=device-width">
 <title>test</title>
 <style>
+.input-wrap{
+	position:relative;
+}
 input[type=checkbox],input[type=radio]{
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
 	width:20px;
 	height:20px;
 	border:0;
@@ -21,16 +28,22 @@ input[type=checkbox]:checked,input[type=radio]:checked{
 </head>
 <body>
 
-	<input type="checkbox" id="test001">
-	<label for="test001">체크박스</label>
+	<div class="input-wrap input-checkbox">
+		<input type="checkbox" id="test001">
+		<label for="test001">체크박스</label>
+	</div>
 
 	<br>
 
-	<input type="radio" id="test002_1" name="test002" checked>
-	<label for="test002_1">라디오1</label>
+	<div class="input-wrap input-radio">
+		<input type="radio" id="test002_1" name="test002" checked>
+		<label for="test002_1">라디오1</label>
+	</div>
 
-	<input type="radio" id="test002_2" name="test002">
-	<label for="test002_2">라디오2</label>
+	<div class="input-wrap input-radio">
+		<input type="radio" id="test002_2" name="test002">
+		<label for="test002_2">라디오2</label>
+	</div>
 
 </body>
 </html>
