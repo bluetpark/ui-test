@@ -5,7 +5,6 @@
 <meta name="viewport" content="user-scalable=no, width=device-width">
 <title>test</title>
 <style>
-body{margin:0;font-size:14px;}
 .test-wrap{
 	padding:20px;
 	border-top:1px solid #ccc;
@@ -44,6 +43,10 @@ label{
 input[type=checkbox]:checked + label,input[type=radio]:checked + label{
 	color:#f00;
 }
+.button{}
+a.button{background:red}
+button.button{background:blue}
+.button.fz{font-size:0;}
 </style>
 </head>
 <body>
@@ -86,6 +89,21 @@ input[type=checkbox]:checked + label,input[type=radio]:checked + label{
 			<option value="010">010</option>
 			<option value="011">011</option>
 		</select>
+	</div>
+
+	<div class="test-wrap">
+		<a href="#" class="button">링크</a>
+		<button type="button" class="button">버튼</button>
+	</div>
+
+	<div class="test-wrap">
+		<a href="#" class="button fz">링크</a>
+		<button type="button" class="button fz">버튼</button>
+	</div>
+
+	<div class="test-wrap">
+		<a href="#" class="button lh">링크</a>
+		<button type="button" class="button lh">버튼</button>
 	</div>
 
 
