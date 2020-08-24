@@ -143,7 +143,7 @@ button.button{background:blue}
 			<div role="tabpanel">
 				탭3내용내용
 			</div>
-			<div role="tabpanel" hidden>
+			<div role="tabpanel">
 				탭4내용내용
 			</div>
 		</div>
@@ -158,7 +158,7 @@ $(function(){
 		var welWrap = welTarget.closest('.tab-wrap');
 		var welPanel = welWrap.find('[role=tabpanel]');
 		welTarget.attr('aria-selected', 'true').siblings().attr('aria-selected', 'false');
-		welPanel.eq(welTarget.index()).removeAttr('hidden').siblings().attr('hidden');
+		welPanel.eq(welTarget.index()).show().siblings().hide();
 	})
 });
 </script>
