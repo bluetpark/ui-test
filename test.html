@@ -121,23 +121,23 @@ button.button{background:blue}
 
 	<div class="test-wrap tab-wrap">
 		<div role="tablist">
-			<a href="#tab1" role="tab" aria-selected="true"><span>탭1</span></a>
-			<a href="#tab2" role="tab" aria-selected="false"><span>탭2</span></a>
+			<a href="#tab1" role="tab" id="tabbtn1" aria-selected="true" aria-controls="tab1"><span>탭1</span></a>
+			<a href="#tab2" role="tab" id="tabbtn2" aria-selected="false" aria-controls="tab2"><span>탭2</span></a>
 		</div>
 		<div>
-			<div role="tabpanel">
-				탭1내용내용
+			<div role="tabpanel" id="tab1" aria-labelledby="tabbtn1">
+				탭1내btn용내용
 			</div>
-			<div role="tabpanel" hidden aria-hidden="true">
-				탭2내용내용
+			<div role="tabpanel" id="tab2" aria-labelledby="tabbtn2" hidden aria-hidden="true">
+				탭btn2내용내용
 			</div>
 		</div>
 	</div>
 
 	<div class="test-wrap tab-wrap">
 		<div role="tablist">
-			<a href="#tab1" role="tab" aria-selected="true"><span>탭3</span></a>
-			<a href="#tab2" role="tab" aria-selected="false"><span>탭4</span></a>
+			<button type="button" role="tab" aria-selected="true"><span>탭3</span></button>
+			<button type="button" role="tab" aria-selected="false"><span>탭4</span></button>
 		</div>
 		<div>
 			<div role="tabpanel">
