@@ -119,6 +119,48 @@ button.button{background:blue}
 		<button type="button" class="button block lh999">버튼</button>
 	</div>
 
+	<div class="test-wrap tab-wrap">
+		<div role="tablist">
+			<a href="#tab1" role="tab" aria-selected="true"><span>탭1</span></a>
+			<a href="#tab2" role="tab" aria-selected="false"><span>탭2</span></a>
+		</div>
+		<div>
+			<div role="tabpanel">
+				탭1내용내용
+			</div>
+			<div role="tabpanel" hidden aria-hidden="true">
+				탭2내용내용
+			</div>
+		</div>
+	</div>
 
+	<div class="test-wrap tab-wrap">
+		<div role="tablist">
+			<a href="#tab1" role="tab" aria-selected="true"><span>탭3</span></a>
+			<a href="#tab2" role="tab" aria-selected="false"><span>탭4</span></a>
+		</div>
+		<div>
+			<div role="tabpanel">
+				탭3내용내용
+			</div>
+			<div role="tabpanel" hidden aria-hidden="true">
+				탭4내용내용
+			</div>
+		</div>
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(function(){
+	$('.tab-wrap').on('click', '[role=tab]', function(e){
+		e.preventDefault();
+		var welTarget = $(e.currentTarget);
+		var welWrap = welTarget.closest('.tab-wrap');
+		var welPanel = welWrap.find('[role=tabpanel]');
+		welTarget.attr('aria-selected', 'true').siblings().attr('aria-selected', 'false');
+		welPanel.eq(welTarget.index()).attr({'hidden':false,'aria-hidden':'false'}).siblings().attr({'hidden':true,'aria-hidden':'true'});
+	})
+});
+</script>
 </body>
 </html>
