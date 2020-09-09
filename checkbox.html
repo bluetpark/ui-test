@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width">
+<title>input checkbox, radio example</title>
+<style>
+body{margin:0}
+input{margin:0;padding:0}
+.test-wrap{
+	padding:20px;
+	border-top:1px solid #ccc;
+	background:#ffd;
+}
+input[type=checkbox]:checked + label{color:red;}
+
+.form__input-checkbox{
+	position:relative;
+	line-height:20px;
+}
+span.form__input-checkbox{
+	display:inline-block;
+}
+.form__input-checkbox input{
+	position:absolute;
+	top:0;
+	left:0;
+	width:20px;
+	height:20px;
+	padding:4px;
+	border:0;
+	border-radius:0;
+	background:transparent;
+	box-sizing:border-box;
+	-webkit-appearance:none;
+	appearance:none;
+	z-index:0;
+}
+.form__input-checkbox input::-ms-check{
+	display:none;
+}
+.form__input-checkbox label{
+	display:inline-block;
+	position:relative;
+	height:20px;
+	padding-left:24px;
+	line-height:20px;
+	vertical-align:top;
+}
+.form__input-checkbox label:before{
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	width:20px;
+	height:20px;
+	border:1px solid #999;
+	border-radius:8px;
+	background:#fff;
+	box-sizing:border-box;
+	content:'';
+}
+.form__input-checkbox input:checked + label:before{
+	border-color:red;
+}
+.form__input-checkbox input:checked + label:after{
+	display:block;
+	position:absolute;
+	top:5px;
+	left:5px;
+	width:8px;
+	height:5px;
+	border:2px solid red;
+	border-width:0 0 2px 2px;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	content:'';
+}
+</style>
+</head>
+<body>
+
+	<div class="wrap">
+		<div class="test-wrap">
+			<input type="checkbox"><label> : 기본이다</label>
+			<br>
+			<input type="checkbox" style="width:20px;height:20px;"><label> : width와 height를 주었다. 20px</label>
+			<br>
+			<input type="checkbox" style="width:5px;height:5px;"><label> : width와 height를 주었다. 5px</label>
+			<br>
+			<input type="checkbox" style="padding:20px;"><label> : padding을 주었다. 20px</label>
+			<br>
+			<input type="checkbox" style="margin:20px;"><label> : margin을 주었다. 20px</label>
+			<br>
+			<input type="checkbox" style="padding:20px;box-sizing:border-box;"><label> : width와 height를 따로 주지않고 padding을 주었다. 20px, box-sizing:border-box</label>
+			<br>
+			<input type="checkbox" style="width:20px;height:20px;padding:5px;box-sizing:border-box;"><label> : width와 height를 주고 padding을 주었다. 5px, box-sizing:border-box</label>
+			<br>
+			<input type="checkbox" style="overflow:hidden;position:absolute;width:10px;height:10px;margin-top:-1px;clip:rect(0 10px 10px 0)"><label> : width와 height를 주고 padding을 주었다. 5px, box-sizing:border-box</label>
+		</div>
+		<div class="test-wrap" style="display:none;">
+			<div class="form__input-checkbox">
+				<input type="checkbox" id="chk01" checked>
+				<label for="chk01">체크박스1</label>
+			</div>
+			<br>
+			<div class="form__input-checkbox">
+				<input type="checkbox" id="chk02">
+				<label for="chk02">체크박스2</label>
+			</div>
+		</div>
+		<div class="test-wrap">
+			<span class="form__input-checkbox">
+				<input type="checkbox" id="chk03">
+				<label for="chk03">체크박스3</label>
+			</span>
+			<span class="form__input-checkbox">
+				<input type="checkbox" id="chk04">
+				<label for="chk04">체크박스4</label>
+			</span>
+		</div>
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(function(){
+	$('.tab-wrap').on('click', '[role=tab]', function(e){
+		e.preventDefault();
+		var welTarget = $(e.currentTarget);
+		var welWrap = welTarget.closest('.tab-wrap');
+		var welPanel = welWrap.find('[role=tabpanel]');
+		welTarget.attr('aria-selected', 'true').siblings().attr('aria-selected', 'false');
+		welPanel.eq(welTarget.index()).show().siblings().hide();
+	})
+});
+</script>
+</body>
+</html>

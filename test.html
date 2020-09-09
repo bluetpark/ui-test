@@ -33,7 +33,7 @@ input[type=checkbox],input[type=radio]{
 	appearance:none;
 }
 input[type=checkbox]:checked,input[type=radio]:checked{
-	/* background-color:green; */
+	background-color:green;
 }
 label{
 	display:block;
@@ -136,14 +136,14 @@ button.button{background:blue}
 
 	<div class="test-wrap tab-wrap">
 		<ul role="tablist">
-			<li role="none presentation"><a href="#tabpanel5" role="tab" id="tab1" aria-selected="true" aria-controls="tabpanel5"><span>아이디찾기</span></a></li>
-			<li role="none presentation"><a href="#tabpanel6" role="tab" id="tab2" aria-selected="false" aria-controls="tabpanel6"><span>비밀번호찾기</span></a></li>
+			<li role="none presentation"><a href="#tabpanel5" role="tab" id="tab5" aria-selected="true" aria-controls="tabpanel5"><span>아이디찾기</span></a></li>
+			<li role="none presentation"><a href="#tabpanel6" role="tab" id="tab6" aria-selected="false" aria-controls="tabpanel6"><span>비밀번호찾기</span></a></li>
 		</ul>
 		<div>
-			<div role="tabpanel" id="tabpanel5" aria-labelledby="tab1" tabindex="0">
+			<div role="tabpanel" id="tabpanel5" aria-labelledby="tab5" tabindex="0">
 				이름과 연락처를 넣으면 아이디를 찾을 수 있습니다.
 			</div>
-			<div role="tabpanel" id="tabpanel6" aria-labelledby="tab2" tabindex="0" style="display:none;">
+			<div role="tabpanel" id="tabpanel6" aria-labelledby="tab6" tabindex="0" style="display:none;">
 				아이디와 이름, 연락처를 넣으면 비밀번호를 찾을 수 있습니다.
 			</div>
 		</div>
@@ -181,7 +181,8 @@ button.button{background:blue}
 
 	<div class="test-wrap">
 		<label>
-			<button type="button">123</button>
+			체크박스
+			<input type="checkbox">
 		</label>
 	</div>
 
@@ -195,6 +196,10 @@ $(function(){
 		var welPanel = welWrap.find('[role=tabpanel]');
 		welTarget.attr('aria-selected', 'true').siblings().attr('aria-selected', 'false');
 		welPanel.eq(welTarget.index()).show().siblings().hide();
+	})
+
+	$('label').on('click',function(e){
+		console.log(e);
 	})
 });
 </script>
