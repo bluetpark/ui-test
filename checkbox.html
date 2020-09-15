@@ -76,17 +76,18 @@ span.form__input-checkbox{
 	transform: rotate(-45deg);
 	content:'';
 }
-input{opacity:0;}
-input:focus+label{outline:auto -webkit-focus-ring-color;}
+input{outline-width:0;}
+input:focus{outline:1px dotted #808080;outline:auto}
+/* input:focus+label{outline:auto -webkit-focus-ring-color;} */
 </style>
 </head>
 <body>
 
 	<div class="wrap">
 		<div class="test-wrap" style="background:#fff">
-			<div style="background:silver;width:100px;height:100px;"></div>
-			<div style="background:gold;width:100px;height:100px;" tabindex="0"></div>
-			<div style="background:skyblue;width:100px;height:100px;" tabindex="1"></div>
+			<!-- <div style="background:silver;width:100px;height:100px;"></div> -->
+			<!-- <div style="background:gold;width:100px;height:100px;" tabindex="0"></div> -->
+			<!-- <div style="background:skyblue;width:100px;height:100px;" tabindex="1"></div> -->
 			<a href="#">링크</a>
 			<br>
 			<button type="button" tabindex="-1">버튼</button>
@@ -99,7 +100,7 @@ input:focus+label{outline:auto -webkit-focus-ring-color;}
 			<br>
 			<input type="checkbox" style="width:20px;height:20px;opacity:0.5"><label> : opacity 50%</label>
 			<br>
-			<input type="checkbox" style="width:20px;height:20px;"><label> : outline 0</label>
+			<input type="checkbox" style="style=""><label> : outline 0</label>
 			<br>
 			<input type="checkbox" style="width:5px;height:5px;"><label> : width와 height를 주었다. 5px</label>
 			<br>
@@ -107,7 +108,7 @@ input:focus+label{outline:auto -webkit-focus-ring-color;}
 			<br>
 			<input type="checkbox" style="margin:20px;"><label> : margin을 주었다. 20px</label>
 			<br>
-			<input type="checkbox" style="" id="chk111"><label for="chk111" tabindex="0"> : margin을 주었다. 20px</label>
+			<!-- <input type="checkbox" style="" id="chk111"><label for="chk111" tabindex="0"> : margin을 주었다. 20px</label> -->
 			<br>
 			<input type="checkbox" style="padding:20px;box-sizing:border-box;"><label> : width와 height를 따로 주지않고 padding을 주었다. 20px, box-sizing:border-box</label>
 			<br>
