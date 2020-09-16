@@ -79,6 +79,11 @@
     transform: translateX(50%);"><span class="for-a11y2">담은 상품 갯수</span><em>2</em></span>
 			</a>
 		</div>
+		<br>
+		<button type="button" aria-expanded="false">이베이 코리아 유한책임회사<span class="for-a11y2">회사정보 더보기</span></button>
+		<div style="display:none">
+			울라울라
+		</div>
 	</div>
 
 
@@ -86,8 +91,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
 $(function(){
-	$('label').on('click',function(e){
-		console.log(e.target);
+	$('button').on('click', function(){
+		if ( $(this).attr('aria-expanded') === 'true' ) {
+			$(this).attr('aria-expanded','false').find('.for-a11y2').text('회사정보 더보기');
+			$(this).next().hide();
+		} else {
+			$(this).attr('aria-expanded','true').find('.for-a11y2').text('회사정보 접기');
+			$(this).next().show();
+		}
 	})
 });
 </script>
