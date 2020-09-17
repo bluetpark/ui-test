@@ -43,18 +43,18 @@ label{
 input[type=checkbox]:checked + label,input[type=radio]:checked + label{
 	color:#f00;
 }
-.button{}
 a.button{background:red}
-button.button{background:blue}
+button.button{background:gold;border:0}
 .button.fz{font-size:0;}
 .button.block{display:block;width:20px;height:20px;}
 .button.lh{line-height:0;}
 .button.lh999{line-height:999em;}
+[role=tab][aria-selected=true]{background:#444;color:#fff;}
 </style>
 </head>
 <body>
 
-	<!-- <div class="test-wrap">
+	<div class="test-wrap">
 		<div class="input-wrap input-checkbox">
 			<input type="checkbox" id="test001">
 			<label for="test001">체크박스</label>
@@ -92,9 +92,9 @@ button.button{background:blue}
 			<option value="010">010</option>
 			<option value="011">011</option>
 		</select>
-	</div> -->
+	</div>
 
-	<!-- <div class="test-wrap">
+	<div class="test-wrap">
 		<a href="#" class="button">링크</a>
 		<button type="button" class="button">버튼</button>
 	</div>
@@ -117,7 +117,7 @@ button.button{background:blue}
 	<div class="test-wrap">
 		<a href="#" class="button block lh999">링크</a>
 		<button type="button" class="button block lh999">버튼</button>
-	</div> -->
+	</div>
 
 	<div class="test-wrap tab-wrap">
 		<div role="tablist">
@@ -179,13 +179,6 @@ button.button{background:blue}
 		</div>
 	</div> -->
 
-	<div class="test-wrap">
-		<label>
-			체크박스
-			<input type="checkbox">
-		</label>
-	</div>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
 $(function(){
@@ -194,12 +187,10 @@ $(function(){
 		var welTarget = $(e.currentTarget);
 		var welWrap = welTarget.closest('.tab-wrap');
 		var welPanel = welWrap.find('[role=tabpanel]');
-		welTarget.attr('aria-selected', 'true').siblings().attr('aria-selected', 'false');
-		welPanel.eq(welTarget.index()).show().siblings().hide();
-	})
-
-	$('label').on('click',function(e){
-		console.log(e);
+		var welButton = welWrap.find('[role=tab]');
+		welTarget.attr('aria-selected', 'true');
+		welButton.not(welTarget).attr('aria-selected','false');
+		welPanel.eq(welButton.index(welTarget)).show().siblings().hide();
 	})
 });
 </script>
