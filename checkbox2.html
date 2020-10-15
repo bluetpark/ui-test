@@ -40,13 +40,6 @@ span.form__input-checkbox{
 	/* appearance:none; */
 	/* z-index:0; */
 }
-.form__input-checkbox input:after{
-	position:absolute;
-	width:10px;
-	height:10px;
-	background:red;
-	content:'';
-}
 .form__input-checkbox input::-ms-check{
 	/* width:10px; */
 	/* height:10px; */
@@ -64,62 +57,12 @@ span.form__input-checkbox{
 
 	<div class="wrap">
 		<table class="table-caseview">
-			<thead>
-				<tr>
-					<th>Chrome</th>
-					<th>Safari</th>
-					<th>Firefox</th>
-					<th>IE 9</th>
-					<th>IE 10</th>
-					<th>IE 11</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						<div class="form__input-checkbox">
-							<input type="checkbox">
-						</div>
-					</td>
-					<td>
-						<div class="form__input-checkbox">
-							<input type="checkbox">
-						</div>
-					</td>
-					<td>
-						<div class="form__input-checkbox">
-							<input type="checkbox">
-						</div>
-					</td>
-					<td>
-						<div class="form__input-checkbox">
-							<input type="checkbox">
-						</div>
-					</td>
-					<td>
-						<div class="form__input-checkbox">
-							<input type="checkbox">
-						</div>
-					</td>
-					<td>
-						<div class="form__input-checkbox">
-							<input type="checkbox">
-						</div>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<table class="table-caseview">
 			<tr>
 				<th></th>
-				<th>배경 X</th>
-				<th>배경 O</th>
+				<th></th>
 			</tr>
 			<tr>
 				<th style="width:200px;">브라우저 기본</th>
-				<td>
-					<input type="checkbox">
-				</td>
 				<td>
 					<input type="checkbox" style="background:gold">
 				</td>
@@ -127,17 +70,11 @@ span.form__input-checkbox{
 			<tr>
 				<th>width:5px;height:5px;</th>
 				<td>
-					<input type="checkbox" style="width:5px;height:5px;">
-				</td>
-				<td>
 					<input type="checkbox" style="width:5px;height:5px;background:gold">
 				</td>
 			</tr>
 			<tr>
 				<th>width:30px;height:30px;</th>
-				<td>
-					<input type="checkbox" style="width:30px;height:30px;">
-				</td>
 				<td>
 					<input type="checkbox" style="width:30px;height:30px;background:gold">
 				</td>
@@ -145,37 +82,29 @@ span.form__input-checkbox{
 			<tr>
 				<th>width:30px;height:50px;</th>
 				<td>
-					<input type="checkbox" style="width:30px;height:50px;">
-				</td>
-				<td>
 					<input type="checkbox" style="width:30px;height:50px;background:gold">
 				</td>
 			</tr>
 			<tr>
 				<th>padding:30px;</th>
 				<td>
-					<input type="checkbox" style="padding:30px">
-				</td>
-				<td>
 					<input type="checkbox" style="padding:30px;background:gold">
 				</td>
 			</tr>
 			<tr>
-				<th>width:30px;height:30px;<br>padding:5px;<br>box-sizing:border-box;</th>
+				<th>width:30px;height:30px;<br>padding:10px;<br>box-sizing:border-box;</th>
 				<td>
-					<input type="checkbox" style="width:30px;height:30px;padding:5px;box-sizing:border-box;">
+					<input type="checkbox" style="width:30px;height:30px;padding:10px;background:gold;box-sizing:border-box">
 				</td>
+			</tr>
+			<tr>
+				<th>width:30px;height:30px;<br>padding-top:30px;<br>box-sizing:border-box;</th>
 				<td>
-					<input type="checkbox" style="width:30px;height:30px;padding:5px;background:gold;box-sizing:border-box">
+					<input type="checkbox" style="width:30px;height:30px;padding-top:30px;background:gold;box-sizing:border-box">
 				</td>
 			</tr>
 		</table>
 	</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>
-$(function(){
-});
-</script>
 </body>
 </html>
