@@ -136,8 +136,8 @@ button.button{background:gold;border:0}
 
 	<div class="test-wrap tab-wrap">
 		<ul role="tablist">
-			<li><a href="#tabpanel5" role="tab" id="tab5" aria-selected="true" aria-controls="tabpanel5"><span>아이디찾기</span></a></li>
-			<li><a href="#tabpanel6" role="tab" id="tab6" aria-selected="false" aria-controls="tabpanel6"><span>비밀번호찾기</span></a></li>
+			<li role="none presentation"><a href="#tabpanel5" role="tab" id="tab5" aria-selected="true" aria-controls="tabpanel5"><span>아이디찾기</span></a></li>
+			<li role="none presentation"><a href="#tabpanel6" role="tab" id="tab6" aria-selected="false" aria-controls="tabpanel6"><span>비밀번호찾기</span></a></li>
 		</ul>
 		<div>
 			<div role="tabpanel" id="tabpanel5" aria-labelledby="tab5" tabindex="0">
@@ -150,15 +150,15 @@ button.button{background:gold;border:0}
 	</div>
 
 	<div class="test-wrap tab-wrap">
-		<div role="tablist">
-			<button type="button" role="tab" id="tab3" aria-selected="true" aria-controls="tabpanel3"><span>아이디찾기</span></button>
-			<button type="button" role="tab" id="tab4" aria-selected="false" aria-controls="tabpanel4"><span>비밀번호찾기</span></button>
+		<div>
+			<button type="button"id="tab3" aria-selected="true" aria-controls="tabpanel3"><span>아이디찾기</span></button>
+			<button type="button"id="tab4" aria-selected="false" aria-controls="tabpanel4"><span>비밀번호찾기</span></button>
 		</div>
 		<div>
-			<div role="tabpanel" id="tabpanel3" aria-labelledby="tab3" tabindex="0">
+			<div id="tabpanel3" aria-labelledby="tab3" tabindex="0">
 				이름과 연락처를 넣으면 아이디를 찾을 수 있습니다.
 			</div>
-			<div role="tabpanel" id="tabpanel4" aria-labelledby="tab4" tabindex="0" style="display:none;">
+			<div id="tabpanel4" aria-labelledby="tab4" tabindex="0" style="display:none;">
 				아이디와 이름, 연락처를 넣으면 비밀번호를 찾을 수 있습니다.
 			</div>
 		</div>
