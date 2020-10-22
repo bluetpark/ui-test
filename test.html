@@ -50,6 +50,7 @@ button.button{background:gold;border:0}
 .button.lh{line-height:0;}
 .button.lh999{line-height:999em;}
 [role=tab][aria-selected=true]{background:#444;color:#fff;}
+.button[aria-pressed=true]{background:lime}
 </style>
 </head>
 <body>
@@ -179,6 +180,10 @@ button.button{background:gold;border:0}
 		</div>
 	</div> -->
 
+	<div class="test-wrap">
+		<button type="button" class="button" aria-pressed="false">찜하기</button>
+	</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
 $(function(){
@@ -192,6 +197,10 @@ $(function(){
 		welButton.not(welTarget).attr('aria-selected','false');
 		welPanel.eq(welButton.index(welTarget)).show().siblings().hide();
 	})
+	$('.test-wrap').on('click', '[aria-pressed]', function(e){
+		var welTarget = $(e.currentTarget);
+		welTarget.attr('aria-pressed', (welTarget.attr('aria-pressed') === 'true') ? 'false' : 'true');
+	});
 });
 </script>
 </body>
