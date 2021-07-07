@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width">
+<title>test</title>
+<style>
+.test-wrap{
+	padding:20px;
+	border-top:1px solid #ccc;
+	background:#ffc;
+}
+.test-wrap:first-child{
+	border-top:0;
+}
+</style>
+</head>
+<body>
+
+	<a href="#content">컨텐츠 바로가기</a>
+	<a href="#">로고</a>
+	<a href="#">메뉴1</a>
+	<a href="#">메뉴2</a>
+	<a href="#">메뉴3</a>
+	<a href="#">메뉴4</a>
+	<a href="#">메뉴5</a>
+	<a href="#">메뉴6</a>
+	<a href="#">메뉴7</a>
+	<a href="#">메뉴8</a>
+	<a href="#">메뉴9</a>
+	<a href="#">메뉴10</a>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<div id="content" style="background:silver;">
+		컨텐츠
+		<button type="button">컨텐츠 버튼</button>
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(function(){
+	$('.tab-wrap').on('click', '[role=tab]', function(e){
+		e.preventDefault();
+		var welTarget = $(e.currentTarget);
+		var welWrap = welTarget.closest('.tab-wrap');
+		var welPanel = welWrap.find('[role=tabpanel]');
+		var welButton = welWrap.find('[role=tab]');
+		welTarget.attr('aria-selected', 'true');
+		welButton.not(welTarget).attr('aria-selected','false');
+		welPanel.eq(welButton.index(welTarget)).show().siblings().hide();
+	})
+	$('.test-wrap').on('click', '[aria-pressed]', function(e){
+		var welTarget = $(e.currentTarget);
+		welTarget.attr('aria-pressed', (welTarget.attr('aria-pressed') === 'true') ? 'false' : 'true');
+	});
+});
+</script>
+</body>
+</html>
