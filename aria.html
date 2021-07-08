@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width">
+<title>test</title>
+<style>
+.test-wrap{
+	padding:20px;
+	border-top:1px solid #ccc;
+	background:#ffc;
+}
+.test-wrap:first-child{
+	border-top:0;
+}
+</style>
+</head>
+<body>
+
+	<div class="test-wrap">
+		<h1>li에 aria-current</h1>
+		<ul>
+			<li><span>배송준비중</span></li>
+			<li aria-current="true"><span>배송중</span></li>
+			<li><span>배송완료</span></li>
+		</ul>
+	</div>
+
+	<div class="test-wrap">
+		<h1>span에 aria-current</h1>
+		<ul>
+			<li><span>배송준비중</span></li>
+			<li><span aria-current="true">배송중</span></li>
+			<li><span>배송완료</span></li>
+		</ul>
+	</div>
+
+	<div class="test-wrap">
+		<h1>button에 aria-current</h1>
+		<ul>
+			<li><button type="button">배송준비중</button></li>
+			<li><button type="button" aria-current="true">배송중</button></li>
+			<li><button type="button">배송완료</button></li>
+		</ul>
+	</div>
+
+	<div class="test-wrap">
+		<h1>a에 aria-current</h1>
+		<ul>
+			<li><a href="#">배송준비중</a></li>
+			<li><a href="#" aria-current="true">배송중</a></li>
+			<li><a href="#">배송완료</a></li>
+		</ul>
+	</div>
+
+</body>
+</html>
