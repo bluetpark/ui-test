@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="user-scalable=no, width=device-width">
+<title>test</title>
+<style>
+.test-wrap{
+	padding:20px;
+	border-top:1px solid #ccc;
+	background:#ffc;
+}
+.test-wrap:first-child{
+	border-top:0;
+}
+</style>
+</head>
+<body>
+
+	<div class="test-wrap">
+		<h3 id="text__title-gift">사은품을 선택하세요</h3>
+		<ul role="radiogroup" aria-labelledby="text__title-gift">
+			<li role="none presentation">
+				<input type="radio" name="gift" id="gift1" checked>
+				<label for="gift1">사은품1</label>
+			</li>
+			<li role="none presentation">
+				<input type="radio" name="gift" id="gift2">
+				<label for="gift2">사은품2</label>
+			</li>
+		</ul>
+	</div>
+
+</body>
+</html>
