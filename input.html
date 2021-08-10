@@ -65,19 +65,23 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
 $(function(){
-	$('input').on('blur',function(){
+	$('input').each(function(){
 		$this = $(this);
-		if ( $this.val().length < $this.attr('maxlength') && $this.val().length > 0 ) {
-			$this.attr('aria-describedby',$this.siblings('.text_warning').attr('id'));
-			$this.siblings('.text_warning').show();
-			setTimeout(function(){
-				$this.trigger('focus');
-			},250)
-		} else if ($this.val().length === $this.attr('maxlength')) {
-			$this.removeAttr('aria-describedby');
-			$this.siblings('.text_warning').hide();
-		}
-	});
+		$this.on('blur',function(){
+			if ( $this.val().length < $this.attr('maxlength') && $this.val().length > 0 ) {
+				$this.attr('aria-describedby',$this.siblings('.text_warning').attr('id'));
+				$this.siblings('.text_warning').show();
+				setTimeout(function(){
+					$this.trigger('focus');
+				},250)
+			} else if ($this.val().length === $this.attr('maxlength')) {
+				$this.removeAttr('aria-describedby');
+				$this.siblings('.text_warning').hide();
+			}
+		});
+
+	}
+	
 });
 </script>
 </body>
