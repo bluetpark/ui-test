@@ -25,6 +25,10 @@
 	height:30px;
 	box-sizing:border-box;
 }
+.input_wrap input[aria-describedby]{
+	outline-color:transparent;
+	border-color:red;
+}
 .input_wrap label{
 	/* position:absolute;
 	top:0;
@@ -34,6 +38,7 @@
 	opacity:0; */
 }
 .text_warning{
+	display:block;
 	display:none;
 	color:red;
 	font-size:11px;
@@ -56,7 +61,7 @@
 		<div class="input_wrap">
 			<input type="tel" id="inp3" placeholder="휴대폰번호 -없이 입력(11자리)" maxlength="11">
 			<label for="inp3">휴대폰번호</label>
-			<span id="inp3tip" class="text_warning" aria-hidden="true"></span>
+			<span id="inp3tip" class="text_warning" aria-hidden="true">휴대폰번호를 정확히 입력하여 주십시오.</span>
 		</div>
 	</div>
 
@@ -65,23 +70,21 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
 $(function(){
-	$('input').each(function(){
-		$this = $(this);
-		$this.on('blur',function(){
+	$('input[type=text],input[type=tel]').each(function(){
+		$(this).on('blur',function(){
+			$this = $(this);
 			if ( $this.val().length < $this.attr('maxlength') && $this.val().length > 0 ) {
 				$this.attr('aria-describedby',$this.siblings('.text_warning').attr('id'));
 				$this.siblings('.text_warning').show();
 				setTimeout(function(){
 					$this.trigger('focus');
 				},250)
-			} else if ($this.val().length === $this.attr('maxlength')) {
+			} else if ($this.val().length === parseInt($this.attr('maxlength'))) {
 				$this.removeAttr('aria-describedby');
 				$this.siblings('.text_warning').hide();
 			}
 		});
-
-	}
-	
+	})
 });
 </script>
 </body>
