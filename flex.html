@@ -15,38 +15,15 @@ height:44px;
 z-index:140;
 text-align:center;
 line-height:44px;
-color:transparent;
-}
-.head_brand.is_before:before{
-animation:none;
+background:#fff;
+transition:all 300ms;
+transform:translateY(0);
 }
 .head_brand.is_hidden{
 color:transparent;
-}
-.head_brand.is_hidden:before{
-display:block;position:absolute;top:0;left:0;width:100%;height:100%;background:#fff;opacity:0;content:'';
-animation-name: test2;
-animation-duration: .3s;
-animation-direction: normal;
-animation-fill-mode: backwards;
-animation-iteration-count: 1;
-}
-.head_brand.is_show:before{
-display:block;position:absolute;top:0;left:0;width:100%;height:100%;background:#fff;opacity:1;content:'';
-animation-name: test;
-animation-duration: .3s;
-animation-direction: normal;
-animation-fill-mode: forwards;
-animation-iteration-count: 1;
-
-}
-@keyframes test {
-	0%{opacity:0;}
-	100%{opacity:1;}
-}
-@keyframes test2 {
-	0%{opacity:1;}
-	100%{opacity:0;}
+background:transparent;
+margin-top:1px;
+transform:translateY(-1px);
 }
 #container{
 padding-top:44px;
@@ -79,7 +56,7 @@ align-self:flex-end;
 </head>
 <body>
 
-<header id="header" class="visible head_sub_type head_brand is_before">
+<header id="header" class="visible head_sub_type head_brand is_hidden">
 	<div class="wrap_tit">
 		헤더
 	</div>
@@ -102,9 +79,9 @@ align-self:flex-end;
 // 헤더
 $(window).on('scroll',function(){
 	if ( $(this).scrollTop() >= 44 ) {
-		$('#header').removeClass('is_hidden').addClass('is_show')
+		$('#header').removeClass('is_hidden');
 	} else {
-		$('#header').removeClass('is_show').addClass('is_hidden');
+		$('#header').addClass('is_hidden');
 	}
 });
 </script>
