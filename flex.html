@@ -78,7 +78,7 @@ $(window).on('scroll',function(){
 	if ( $(this).scrollTop() >= 44 ) {
 		$('#header').removeClass('is_hidden')
 	} else if ( $(this).scrollTop() < 0 ) {
-		$('#header').scrollTo(0);
+		$('#header').scrollTop(0);
 		$('#header').addClass('is_hidden');
 	} else {
 		$('#header').addClass('is_hidden');
