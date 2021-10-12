@@ -75,6 +75,7 @@ align-self:flex-end;
 <script>
 // 헤더
 $(window).on('scroll',function(){
+	console.log( $(this).scrollTop() );
 	( $(this).scrollTop() >= 44 ) ? $('#header').removeClass('is_hidden') : $('#header').addClass('is_hidden');
 });
 </script>
