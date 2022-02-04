@@ -13,6 +13,15 @@
 .test-wrap:first-child{
 	border-top:0;
 }
+.blind{
+	overflow:hidden;
+	position:absolute;
+	clip:rect(0 0 0 0);
+	width:1px;
+	height:1px;
+	line-height:0;
+	margin:-1px;
+}
 </style>
 </head>
 <body>
@@ -37,6 +46,15 @@
 			<label for="gift21">사은품1</label>
 			<input type="radio" name="gift2" id="gift22">
 			<label for="gift22">사은품2</label>
+		</ul>
+	</div>
+
+	<div class="test-wrap">
+		<div role="radiogroup" aria-label="사은품을 선택하랑께?">
+			<input type="radio" name="gift2" id="gift21" checked>
+			<label for="gift21"><span class="blind">사은품1</span></label>
+			<input type="radio" name="gift2" id="gift22">
+			<label for="gift22"><span class="blind">사은품2</span></label>
 		</ul>
 	</div>
 
