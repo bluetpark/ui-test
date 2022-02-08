@@ -23,6 +23,15 @@
 }
 .blind{
 	overflow:hidden;
+	position:absolute;
+	clip:rect(0 0 0 0);
+	width:1px;
+	height:1px;
+	line-height:0;
+	margin:-1px;
+}
+.blind2{
+	overflow:hidden;
 	position:absolute !important;
 	width:1px;
 	height:1px;
@@ -57,6 +66,27 @@
 		<h1>텍스트</h1>
 		<div>동해물과 백두산이 마르고 닳도록 <div class="blind">하느님이 보우하사 우리나라 만세</div> 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</div>
 		<div>남산위에 저 소나무 철갑을 두른듯 <span class="blind">바람서리 불변함은 우리 기상일세</span> 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</div>
+	</div>
+
+	<div class="test-wrap">
+		<h1>링크 버튼 레이블</h1>
+		<a href="#" class="test-link">
+			<span class="blind2">앵커에 숨김 텍스트</span>
+		</a>
+		<br>
+		<button type="button">
+			<span class="blind2">버튼에 숨김 텍스트</span>
+		</button>
+		<br>
+		<input type="checkbox" id="test1"><label for="test1"><span class="blind2">체크박스 레이블에 숨김 텍스트</span></label>
+		<br>
+		<input type="radio" id="test2"><label for="test2"><span class="blind2">라디오버튼 레이블에 숨김 텍스트</span></label>
+	</div>
+
+	<div class="test-wrap">
+		<h1>텍스트</h1>
+		<div>동해물과 백두산이 마르고 닳도록 <div class="blind2">하느님이 보우하사 우리나라 만세</div> 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</div>
+		<div>남산위에 저 소나무 철갑을 두른듯 <span class="blind2">바람서리 불변함은 우리 기상일세</span> 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</div>
 	</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
