@@ -43,154 +43,6 @@
 	/* white-space:nowrap; */
 	line-height:0;
 }
-
-.dm68 .tit_sub {
-    padding: .9rem 1.8rem 0;
-    font-weight: 400;
-    font-size: 1.9rem;
-    line-height: 2.7rem
-}
-
-.dm68 .tit_sub a {
-    display: block;
-    color: #333
-}
-
-.dm68 .swipe_wrap {
-    overflow: hidden;
-    width: 100%
-}
-
-.dm68 .list {
-    padding: 1.2rem 0 1.4rem;
-    font-size: 0;
-    white-space: nowrap
-}
-
-.dm68 .list .item {
-    display: inline-block;
-    width: 14rem;
-    margin: 0 .7rem
-}
-
-.dm68 .list .item:first-child {
-    margin-left: 1.8rem
-}
-
-.dm68 .list .item:last-child {
-    margin-right: 1.8rem
-}
-
-.dm68 .list .item.is-gated .txt_name {
-    display: inline-block;
-    padding-right: .7rem;
-    background: url(../img/common/cjmall/m/icon_bullet_5x10.png) right 0 center no-repeat;
-    background-size: 4px 8px
-}
-
-.dm68 .list .btn_video {
-    position: relative;
-    display: block
-}
-
-.dm68 .list .btn_video .thumb {
-    overflow: hidden;
-    position: relative;
-    display: block;
-    border-radius: .4rem
-}
-
-.dm68 .list .btn_video .thumb:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    content: "";
-    background: -webkit-linear-gradient(bottom,rgba(0,0,0,.03) 0,rgba(0,0,0,.2) 100%);
-    background: linear-gradient(to top,rgba(0,0,0,.03) 0,rgba(0,0,0,.2) 100%)
-}
-
-.dm68 .list .btn_video .thumb:after {
-    content: "";
-    -webkit-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    overflow: hidden;
-    display: inline-block;
-    background-repeat: no-repeat;
-    background-image: url(../img/common/cjos/m/sp_player.png);
-    -webkit-background-size: 200px auto;
-    background-size: 200px auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 28px;
-    height: 32px;
-    background-position: -45px -51px;
-    background-size: 200px auto
-}
-
-.dm68 .list .btn_video .thumb img {
-    width: 14rem;
-    height: 21rem
-}
-
-.dm68 .list .btn_video .txt_area {
-    display: block;
-    margin-top: 1rem
-}
-
-.dm68 .list .btn_video .txt_area .txt {
-    overflow: hidden;
-    display: block;
-    font-size: 1.4rem;
-    line-height: 1.7rem;
-    color: #333;
-    white-space: nowrap
-}
-
-.dm68 .list .btn_video .txt_time {
-    position: absolute;
-    top: .8rem;
-    right: .8rem;
-    font-size: 1.2rem;
-    text-shadow: 0 .5px 0 rgba(0,0,0,.5);
-    line-height: 1.3rem;
-    color: #fff
-}
-
-.is_ios .dm68 .list .btn_video .txt_time {
-    text-shadow: 0 .1rem rgba(0,0,0,.5)
-}
-
-.dm68 .list .btn_host {
-    position: relative;
-    display: block;
-    height: 3rem;
-    margin-top: .5rem;
-    padding: .8rem 0 0 3.4rem;
-    box-sizing: border-box
-}
-
-.dm68 .list .btn_host .thumb {
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 50%
-}
-
-.dm68 .list .btn_host .thumb img {
-    width: 3rem;
-    height: 3rem
-}
-
-.dm68 .list .btn_host .txt_name {
-    font-size: 1.2rem;
-    line-height: 1.3rem;
-    color: grey
-}
-
 </style>
 </head>
 <body>
@@ -245,10 +97,10 @@
 			<span>
 				<span>a 기본, 자식 기본</span>
 			</span>
-			<div>
+			<span>
 				<span class="blind2">상품가격</span>
 				<span>500원</span>
-			</div>
+			</span>
 		</a>
 	</div>
 
@@ -258,10 +110,10 @@
 			<span>
 				<span>a 기본, 자식 플렉스</span>
 			</span>
-			<div style="display:flex;">
+			<span style="display:flex;">
 				<span class="blind2">상품가격</span>
 				<span>500원</span>
-			</div>
+			</span>
 		</a>
 	</div>
 
@@ -271,10 +123,10 @@
 			<span>
 				<span>a 플렉스, 자식 기본</span>
 			</span>
-			<div>
+			<span>
 				<span class="blind2">상품가격</span>
 				<span>500원</span>
-			</div>
+			</span>
 		</a>
 	</div>
 
@@ -284,10 +136,10 @@
 			<span style="display:flex">
 				<span>a 플렉스, 자식 2 플렉스</span>
 			</span>
-			<div style="display:flex;">
+			<span style="display:flex;">
 				<span class="blind2">상품가격</span>
 				<span>500원</span>
-			</div>
+			</span>
 		</a>
 	</div>
 
@@ -297,16 +149,16 @@
 			<span>
 				<span>a 플렉스, 자식 1 플렉스</span>
 			</span>
-			<div style="display:flex;">
+			<span style="display:flex;">
 				<span class="blind2">상품가격</span>
 				<span>500원</span>
-			</div>
+			</span>
 		</a>
 	</div>
 
 	<div class="test-wrap">
 		<a href="#" style="display:block;width:100px;">
-			<span class="thumb" style="display:block;">
+			<span style="display:block;">
 				<img src="https://phinf.pstatic.net/contact/20210802_131/16279135215797Xeaw_PNG/profileImage.png?type=f130_130" alt="" style="width:100%">
 			</span>
 			<span style="display:block">
@@ -321,107 +173,20 @@
 	</div>
 
 	<div class="test-wrap">
-		<ul style="display:flex;flex-flow:row">
-			<li>
-				<a href="#" style="display:block;width:100px;border:1px solid red;">
-					<img src="https://phinf.pstatic.net/contact/20210802_131/16279135215797Xeaw_PNG/profileImage.png?type=f130_130" alt="" style="width:100%">
-					<span>
-						<span>상품나열1</span>
-					</span>
-					<div>
-						<span class="blind2">상품가격</span>
-						<span>500원</span>
-					</div>
-				</a>
-			</li>
-			<li>
-				<a href="#" style="display:block;width:100px;border:1px solid red;">
-					<img src="https://phinf.pstatic.net/contact/20210802_131/16279135215797Xeaw_PNG/profileImage.png?type=f130_130" alt="" style="width:100%">
-					<span>
-						<span>상품나열2</span>
-					</span>
-					<div>
-						<span class="blind2">상품가격</span>
-						<span>500원</span>
-					</div>
-				</a>
-			</li>
-		</ul>
+		<a href="#" style="display:block;width:100px;">
+			<div style="display:block;">
+				<img src="https://phinf.pstatic.net/contact/20210802_131/16279135215797Xeaw_PNG/profileImage.png?type=f130_130" alt="" style="width:100%">
+			</div>
+			<div style="display:block">
+				<span>자식을 block으로</span>
+				<span>만들기</span>
+			</div>
+			<div style="display:block">
+				<span class="blind2">상품가격</span>
+				<span>500원</span>
+			</div>
+		</a>
 	</div>
-
-	<div class="module_bx dm68"><!-- module : DM0068A -->
-		<!-- div class="module_bx m_swipe dm68a" -->
-		<h3 class="tit_md2">
-			<span class="tit_inner">
-				<span class="txt">고르고 또 골랐어요 당신만의 라이브쇼</span>
-			</span>
-		</h3>
-		<h4 class="tit_sub">
-			<a href="javascript:return void;" data-link-index="bannerLink" spcid="HOME_596_798_27_dm0068a__" ga-category="홈_003087_596" ga-action="798_DM0068A_지난방송 큐레이션①" ga-label="001_콘텐츠/NONE_NONE_묶음상품__" ga-actiontype="페이지이동" ga-4depth="027" ga-7depth="001" ga-pgmcode="NONE" ga-pgmname="NONE" ga-pgmvariant="NONE" ga-9depth="NONE" ga-productcode="NONE" class="gaclass">
-				라이브쇼 인기 TOP10
-			</a>
-		</h4>
-		<div class="swipe_wrap swiper-container-horizontal swiper-container-android" data-swipe="dm68a_0">
-			<ul class="list">
-				<li class="item is-gated swiper-slide-active">
-					<a href=" https://display.cjonstyle.com/m/newlive/remain?itvPgmCd=220216S0025 " data-link-index="bannerLink" spcid="HOME_596_798_27_dm0068a__" ga-category="홈_003087_596" ga-action="798_DM0068A_지난방송 큐레이션①" ga-label="001_콘텐츠/동영상_001_동영상_A008663_[기적의4억판매 그 혜택]쿠쿠 넘버원 트윈프레셔" ga-actiontype="페이지이동" ga-4depth="027" ga-7depth="001" ga-9depth="001" ga-pgmcode="NONE" ga-pgmname="NONE" ga-pgmvariant="NONE" ga-productcode="NONE" class="btn_video gaclass">
-						<span class="thumb">
-							<img class="" src="//thumb.cjonstyle.net/unsafe/228x342/center/image.cjonstyle.net/cfs/video/public/confirm/assets/202202/20220223/A008663/bf514fbc5477a08e48beceacd7d92213d464584b.jpg" data-src="//thumb.cjonstyle.net/unsafe/228x342/center/image.cjonstyle.net/cfs/video/public/confirm/assets/202202/20220223/A008663/bf514fbc5477a08e48beceacd7d92213d464584b.jpg" data-error-src="//thumb.cjonstyle.net/unsafe/228x342/image.cjonstyle.net/public/confirm/contents/ec-static-contents/design/img/cjonstyle/default_thumb.png" alt="" spcid="">
-						</span>
-							<span class="txt_area">
-								<span class="txt">쿠쿠 트윈프레셔 </span>
-								<span class="txt">넘버원 혜택전 </span>
-							</span>
-						<span class="txt_time"><span class="blind">동영상 재생시간</span>59:17</span>
-					</a>
-					<a href=" https://display.cjonstyle.com/m/sellerExcl/SC0092 " class="btn_host gaclass" data-link-index="bannerLink" spcid="HOME_596_798_27_dm0068a__" ga-category="홈_003087_596" ga-action="798_DM0068A_지난방송 큐레이션①" ga-label="001_콘텐츠/쇼호스트정보_001_NONE_NONE_NONE" ga-actiontype="페이지이동" ga-4depth="027" ga-7depth="001" ga-9depth="001" ga-pgmcode="NONE" ga-pgmname="NONE" ga-pgmvariant="NONE" ga-productcode="NONE">
-						<span class="thumb">
-							<img class="" src="//thumb.cjonstyle.net/unsafe/60x60/image.cjonstyle.net/public/confirm/assets/TSH_CMMN_CONTS/202201/04/SC0092/19aa71a5c3853ca6a53936c6f3498619d02eb4f1.jpg" data-src="//thumb.cjonstyle.net/unsafe/60x60/image.cjonstyle.net/public/confirm/assets/TSH_CMMN_CONTS/202201/04/SC0092/19aa71a5c3853ca6a53936c6f3498619d02eb4f1.jpg" data-error-src="//thumb.cjonstyle.net/unsafe/240x240/image.cjonstyle.net/public/confirm/contents/ec-static-contents/design/img/cjonstyle/default_thumb.png" alt="" spcid="">
-						</span>
-						<span class="txt_name">김유정</span>
-					</a>
-				</li>
-				<li class="item swiper-slide-next">
-					<a href=" https://display.cjonstyle.com/m/newlive/remain?itvPgmCd=220216S0019 " data-link-index="bannerLink" spcid="HOME_596_798_27_dm0068a__" ga-category="홈_003087_596" ga-action="798_DM0068A_지난방송 큐레이션①" ga-label="001_콘텐츠/동영상_002_동영상_A008651_[가격인상확정]천재교육 돌잡이 패키지" ga-actiontype="페이지이동" ga-4depth="027" ga-7depth="001" ga-9depth="002" ga-pgmcode="NONE" ga-pgmname="NONE" ga-pgmvariant="NONE" ga-productcode="NONE" class="btn_video gaclass">
-						<span class="thumb">
-							<img class="" src="//thumb.cjonstyle.net/unsafe/228x342/center/image.cjonstyle.net/cfs/video/public/confirm/assets/202202/20220223/A008651/f09081bf9f8ba9f5b5c7fa23eaa0d6473f52f7b2.jpg" data-src="//thumb.cjonstyle.net/unsafe/228x342/center/image.cjonstyle.net/cfs/video/public/confirm/assets/202202/20220223/A008651/f09081bf9f8ba9f5b5c7fa23eaa0d6473f52f7b2.jpg" data-error-src="//thumb.cjonstyle.net/unsafe/228x342/image.cjonstyle.net/public/confirm/contents/ec-static-contents/design/img/cjonstyle/default_thumb.png" alt="" spcid="">
-						</span>
-							<span class="txt_area">
-								<span class="txt">천재교육 돌잡이 </span>
-								<span class="txt">가격인상전마지막 </span>
-							</span>
-						<span class="txt_time"><span class="blind">동영상 재생시간</span>59:29</span>
-					</a>
-					<a href="javascript:return void;" class="btn_host gaclass" data-link-index="bannerLink" spcid="HOME_596_798_27_dm0068a__" ga-category="홈_003087_596" ga-action="798_DM0068A_지난방송 큐레이션①" ga-label="001_콘텐츠/쇼호스트정보_002_NONE_NONE_NONE" ga-actiontype="페이지이동" ga-4depth="027" ga-7depth="001" ga-9depth="002" ga-pgmcode="NONE" ga-pgmname="NONE" ga-pgmvariant="NONE" ga-productcode="NONE">
-						<span class="thumb">
-							<img class="" src="//thumb.cjonstyle.net/unsafe/60x60/image.cjonstyle.net/public/confirm/assets/TSH_CMMN_CONTS/202105/20/SC0083/00834969c011287869b225980c13ff88da3e3964.jpg" data-src="//thumb.cjonstyle.net/unsafe/60x60/image.cjonstyle.net/public/confirm/assets/TSH_CMMN_CONTS/202105/20/SC0083/00834969c011287869b225980c13ff88da3e3964.jpg" data-error-src="//thumb.cjonstyle.net/unsafe/240x240/image.cjonstyle.net/public/confirm/contents/ec-static-contents/design/img/cjonstyle/default_thumb.png" alt="" spcid="">
-						</span>
-						<span class="txt_name">한아란</span>
-					</a>
-				</li>
-				<li class="item is-gated">
-					<a href=" https://display.cjonstyle.com/m/newlive/remain?itvPgmCd=220215S0004 " data-link-index="bannerLink" spcid="HOME_596_798_27_dm0068a__" ga-category="홈_003087_596" ga-action="798_DM0068A_지난방송 큐레이션①" ga-label="001_콘텐츠/동영상_003_동영상_A008613_[락토핏] 1년 단하루! 종근당 최대 프로모션, 역대급 체감가" ga-actiontype="페이지이동" ga-4depth="027" ga-7depth="001" ga-9depth="003" ga-pgmcode="NONE" ga-pgmname="NONE" ga-pgmvariant="NONE" ga-productcode="NONE" class="btn_video gaclass">
-						<span class="thumb">
-							<img class="" src="//thumb.cjonstyle.net/unsafe/228x342/center/image.cjonstyle.net/cfs/video/public/confirm/assets/202202/20220221/A008613/136986ae519b245071a53db795435f9ea17e117f.jpg" data-src="//thumb.cjonstyle.net/unsafe/228x342/center/image.cjonstyle.net/cfs/video/public/confirm/assets/202202/20220221/A008613/136986ae519b245071a53db795435f9ea17e117f.jpg" data-error-src="//thumb.cjonstyle.net/unsafe/228x342/image.cjonstyle.net/public/confirm/contents/ec-static-contents/design/img/cjonstyle/default_thumb.png" alt="" spcid="">
-						</span>
-							<span class="txt_area">
-								<span class="txt">1년 중 단하루 </span>
-								<span class="txt">락토핏 최대혜택 </span>
-							</span>
-						<span class="txt_time"><span class="blind">동영상 재생시간</span>59:11</span>
-					</a>
-					<a href=" https://display.cjonstyle.com/m/sellerExcl/SC0090 " class="btn_host gaclass" data-link-index="bannerLink" spcid="HOME_596_798_27_dm0068a__" ga-category="홈_003087_596" ga-action="798_DM0068A_지난방송 큐레이션①" ga-label="001_콘텐츠/쇼호스트정보_003_NONE_NONE_NONE" ga-actiontype="페이지이동" ga-4depth="027" ga-7depth="001" ga-9depth="003" ga-pgmcode="NONE" ga-pgmname="NONE" ga-pgmvariant="NONE" ga-productcode="NONE">
-						<span class="thumb">
-							<img class="" src="//thumb.cjonstyle.net/unsafe/60x60/image.cjonstyle.net/public/confirm/assets/TSH_CMMN_CONTS/202112/16/SC0090/0d60d0ca01b2bbba452be58543cebe6667017f85.jpg" data-src="//thumb.cjonstyle.net/unsafe/60x60/image.cjonstyle.net/public/confirm/assets/TSH_CMMN_CONTS/202112/16/SC0090/0d60d0ca01b2bbba452be58543cebe6667017f85.jpg" data-error-src="//thumb.cjonstyle.net/unsafe/240x240/image.cjonstyle.net/public/confirm/contents/ec-static-contents/design/img/cjonstyle/default_thumb.png" alt="" spcid="">
-						</span>
-						<span class="txt_name">장원용</span>
-					</a>
-				</li>
-			</ul>
-		</div>
-		
-		<!--/div-->
-		<!-- //module : DM0068A --></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
