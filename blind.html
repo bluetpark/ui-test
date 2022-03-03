@@ -48,6 +48,7 @@
 </head>
 <body>
 
+	<!--
 	<div class="test-wrap">
 		<h1>링크 버튼 레이블</h1>
 		<a href="#" class="test-link">
@@ -89,12 +90,39 @@
 		<div>동해물과 백두산이 마르고 닳도록 <div class="blind2">하느님이 보우하사 우리나라 만세</div> 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</div>
 		<div>남산위에 저 소나무 철갑을 두른듯 <span class="blind2">바람서리 불변함은 우리 기상일세</span> 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</div>
 	</div>
+-->
 
 	<div class="test-wrap">
 		<a href="#" style="display:block;width:100px;border:1px solid blue;">
 			<img src="https://phinf.pstatic.net/contact/20210802_131/16279135215797Xeaw_PNG/profileImage.png?type=f130_130" alt="" style="width:100%">
 			<span>
-				<span>상품명 블라블라</span>
+				<span>a 기본, 자식 기본</span>
+			</span>
+			<div>
+				<span class="blind2">상품가격</span>
+				<span>500원</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="test-wrap">
+		<a href="#" style="display:block;width:100px;border:1px solid blue;">
+			<img src="https://phinf.pstatic.net/contact/20210802_131/16279135215797Xeaw_PNG/profileImage.png?type=f130_130" alt="" style="width:100%">
+			<span>
+				<span>a 기본, 자식 플렉스</span>
+			</span>
+			<div style="display:flex;">
+				<span class="blind2">상품가격</span>
+				<span>500원</span>
+			</div>
+		</a>
+	</div>
+
+	<div class="test-wrap">
+		<a href="#" style="display:block;width:100px;border:1px solid red;display:flex;flex-flow:column">
+			<img src="https://phinf.pstatic.net/contact/20210802_131/16279135215797Xeaw_PNG/profileImage.png?type=f130_130" alt="" style="width:100%">
+			<span>
+				<span>a 플렉스, 자식 기본</span>
 			</span>
 			<div>
 				<span class="blind2">상품가격</span>
@@ -107,7 +135,7 @@
 		<a href="#" style="display:block;width:100px;border:1px solid red;display:flex;flex-flow:column">
 			<img src="https://phinf.pstatic.net/contact/20210802_131/16279135215797Xeaw_PNG/profileImage.png?type=f130_130" alt="" style="width:100%">
 			<span style="display:flex">
-				<span>상품명 블라블라 이건 플렉스다</span>
+				<span>a 플렉스, 자식 2 플렉스</span>
 			</span>
 			<div style="display:flex;">
 				<span class="blind2">상품가격</span>
@@ -120,36 +148,9 @@
 		<a href="#" style="display:block;width:100px;border:1px solid red;display:flex;flex-flow:column">
 			<img src="https://phinf.pstatic.net/contact/20210802_131/16279135215797Xeaw_PNG/profileImage.png?type=f130_130" alt="" style="width:100%">
 			<span>
-				<span>자식으로 플렉스 하나만 있어도 되냐</span>
+				<span>a 플렉스, 자식 1 플렉스</span>
 			</span>
 			<div style="display:flex;">
-				<span class="blind2">상품가격</span>
-				<span>500원</span>
-			</div>
-		</a>
-	</div>
-
-	<div class="test-wrap">
-		<a href="#" style="display:block;width:100px;border:1px solid green;"">
-			<img src="https://phinf.pstatic.net/contact/20210802_131/16279135215797Xeaw_PNG/profileImage.png?type=f130_130" alt="" style="width:100%">
-			<span>
-				<span>자식으로 플렉스 하나만 있어도 되냐</span>
-			</span>
-			<div style="position:absolute">
-				<span class="blind2">상품가격</span>
-				<span>500원</span>
-			</div>
-		</a>
-	</div>
-
-	<div class="test-wrap">
-		<a href="#" style="display:block;position:relative;width:100px;border:1px solid salmon;"">
-			<span class="thumb" style="overflow:hidden;position:relative;display:block;border-radius:20px"><img src="https://phinf.pstatic.net/contact/20210802_131/16279135215797Xeaw_PNG/profileImage.png?type=f130_130" alt="" style="width:100%"></span>
-			<span style="display:block">
-				<span style="overflow:hidden;display:block;">자식으로 플렉스</span>
-				<span style="overflow:hidden;display:block;">하나만 있어도 되냐</span>
-			</span>
-			<div style="position:absolute">
 				<span class="blind2">상품가격</span>
 				<span>500원</span>
 			</div>
