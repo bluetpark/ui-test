@@ -77,7 +77,7 @@ $(function(){
 	}, 500);
 	$('.lypop').on('click','button',function(){
 		$(event.currentTarget).hide();
-		$('#content').trigger('focus');
+		$('.lypop').siblings().removeAttr('aria-hidden');
 	});
 });
 </script>
