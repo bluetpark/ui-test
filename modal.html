@@ -7,8 +7,10 @@
 <style>
 body{font-size:16px;}
 h1,h2,h3,h4,h5,h6,p{margin:0;}
+#content:focus,
+.lypop:focus{outline:auto skyblue;}
 
-.lypop{display:none;}
+.lypop{display:none;position:fixed;top:0;left:0;width:100%;height:100%;}
 .lypop:before{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5);content:'';}
 .lypop_inner{position:fixed;top:0;right:0;bottom:0;left:0;width:260px;height:200px;margin:auto;border-radius:8px;background-color:#fff;color:#333;text-align:center;}
 .lypop_head{height:49px;border-bottom:1px solid #eee;line-height:49px;}
@@ -31,9 +33,13 @@ h1,h2,h3,h4,h5,h6,p{margin:0;}
 			</ul>
 		</div>
 		<div id="container">
-			<div id="content">
+			<div id="content" tabindex="-1">
 				페이지 내용<br>
-				내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
+				내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
+				내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
+				내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
+				내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
+				내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
 				<a href="#">링크링크</a>
 				<button type="button">버튼버튼</button>
 			</div>
@@ -46,7 +52,7 @@ h1,h2,h3,h4,h5,h6,p{margin:0;}
 		</div>
 	</div>
 
-	<div class="lypop">
+	<div class="lypop" id="lypop1" tabindex="-1">
 		<div class="lypop_inner">
 			<div class="lypop_head">
 				<h1 class="lypop_tit">모달팝업 제목</h1>
@@ -65,6 +71,13 @@ h1,h2,h3,h4,h5,h6,p{margin:0;}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
 $(function(){
+	var initLypop = setTimeout(function(){
+		$('#lypop1').show().trigger('focus');
+	}, 500);
+	$('.lypop').on('click','button',function(){
+		$(event.currentTarget).hide();
+		$('#content').trigger('focus');
+	});
 });
 </script>
 </body>
