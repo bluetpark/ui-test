@@ -71,12 +71,11 @@ h1,h2,h3,h4,h5,h6,p{margin:0;}
 $(function(){
 	var initLypop = setTimeout(function(){
 		$('.lypop').show().trigger('focus');
-		$('.lypop').siblings().attr('aria-hidden','true');
-	}, 500);
+		$('#wrap').attr('aria-hidden','true');
+	}, 250);
 	$('.lypop').on('click','button',function(){
+		$('#wrap').removeAttr('aria-hidden').trigger('focus');
 		$(event.currentTarget).hide();
-		$('.lypop').siblings().removeAttr('aria-hidden');
-		$('#wrap').trigger('focus');
 	});
 });
 </script>
