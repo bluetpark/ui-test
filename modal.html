@@ -5,22 +5,39 @@
 <meta name="viewport" content="user-scalable=no, width=device-width">
 <title>모달팝업</title>
 <style>
-body{font-size:16px;}
+body{margin:0;font-size:16px;}
 h1,h2,h3,h4,h5,h6,p{margin:0;}
 
-.lypop{display:none;position:fixed;top:0;left:0;width:100%;height:100%;}
+.wrap{}
+.header{height:100px;background-color:gold;}
+.header_inner{position:relative;max-width:770px;margin:0 auto;}
+.container{background-color:silver;}
+.content{max-width:770px;margin:0 auto;background-color:#fff;}
+.footer{height:100px;background-color:gray;}
+.footer_inner{position:relative;max-width:770px;margin:0 auto;}
+
+.logo{position:absolute;top:30px;left:0;height:40px;font-size:20px;line-height:40px;}
+.logo a{display:block;height:100%;padding:0 12px;background-color:olive;color:gold;text-decoration:none;}
+.gnb{position:absolute;top:37px;right:0;margin:0;padding:0;}
+.gnb:after{display:block;clear:both;content:'';}
+.gnb li{float:left;margin-left:5px;list-style:none;}
+.gnb li:first-child{margin-left:0;}
+.gnb li a{display:block;padding:2px 4px;border:1px solid #333;border-radius:4px;color:#333;text-decoration:none;}
+
+.lypop{display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:10;}
 .lypop:before{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5);content:'';}
-.lypop_inner{position:fixed;top:0;right:0;bottom:0;left:0;width:260px;height:200px;margin:auto;border-radius:8px;background-color:#fff;color:#333;text-align:center;}
+.lypop_inner{position:fixed;top:50%;left:50%;width:260px;transform:translate(-50%, -50%);border-radius:8px;background-color:#fff;color:#333;text-align:center;}
 .lypop_head{height:49px;border-bottom:1px solid #eee;line-height:49px;}
 .lypop_tit{font-size:16px;margin:0;}
-.lypop_cont{height:100px;padding:20px;font-size:14px;box-sizing:border-box;}
+.lypop_cont{padding:20px;font-size:14px;box-sizing:border-box;}
 .lypop_cont p{margin:0;}
-.lypop_foot{bottom:50px;}
+.lypop_cont .btn_area{padding:20px 0 0;}
 </style>
 </head>
 <body>
 
-	<div class="lypop" id="lypop1" tabindex="-1" role="dialog" aria-modal="true">
+	<!-- 팝업 : 페이지 진입시 -->
+	<div class="lypop" id="lypop1" role="dialog" aria-modal="true">
 		<div class="lypop_inner">
 			<div class="lypop_head">
 				<h1 class="lypop_tit">모달팝업 제목</h1>
@@ -28,29 +45,52 @@ h1,h2,h3,h4,h5,h6,p{margin:0;}
 			<div class="lypop_cont">
 				<p>모달팝업 내용</p>
 				<p>블라블라 숑숑숑</p>
-			</div>
-			<div class="lypop_foot">
-				<button type="button">이동할래</button>
-				<button type="button">그냥볼래</button>
+				<div class="btn_area">
+					<button type="button">이동할래</button>
+					<button type="button">그냥볼래</button>
+					<button type="button" class="btn_close">닫기</button>
+				</div>
 			</div>
 		</div>
 	</div>
 
-	<div id="wrap" tabindex="-1">
-		<div id="header">
-			<h1><a href="#">페이지 제목</a></h1>
-			<ul>
-				<li><a href="#">메뉴1</a></li>
-				<li><a href="#">메뉴2</a></li>
-				<li><a href="#">메뉴3</a></li>
-				<li><a href="#">메뉴4</a></li>
-			</ul>
+	<!-- 팝업 : 버튼 클릭시 -->
+	<div class="lypop" id="lypop2" role="dialog" aria-modal="true">
+		<div class="lypop_inner">
+			<div class="lypop_head">
+				<h1 class="lypop_tit">눌러서 띄운 팝업</h1>
+			</div>
+			<div class="lypop_cont">
+				<p>닫으면 초점은 다시..!</p>
+				<p>돌아가는거야!</p>
+				<div class="btn_area">
+					<button type="button">그냥 버튼</button>
+					<button type="button" class="btn_close">닫기</button>
+				</div>
+			</div>
 		</div>
-		<div id="container">
-			<div id="content" tabindex="-1">
+	</div>
+
+	<div id="wrap" class="wrap">
+		<div id="header" class="header">
+			<div class="header_inner">
+				<h1 class="logo"><a href="#">레이어팝업</a></h1>
+				<ul id="gnb" class="gnb">
+					<li><a href="#">레</a></li>
+					<li><a href="#">이</a></li>
+					<li><a href="#">어</a></li>
+					<li><a href="#">팝</a></li>
+					<li><a href="#">업</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="container" class="container">
+			<div id="content" class="content">
 				페이지 내용<br>
 				내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
 				내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
+				내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
+				<button type="button" onclick="lypop.launch('#lypop2');">띄워야지! 팝업!</button><br>
 				내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
 				내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
 				내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>내용<br>
@@ -58,24 +98,35 @@ h1,h2,h3,h4,h5,h6,p{margin:0;}
 				<button type="button">버튼버튼</button>
 			</div>
 		</div>
-		<div id="footer">
-			푸터
-			<a href="#">푸터링크1</a>
-			<a href="#">푸터링크2</a>
-			<a href="#">푸터링크3</a>
+		<div id="footer" class="footer">
+			<div class="footer_inner">
+				푸터
+				<a href="#">푸터링크1</a>
+				<a href="#">푸터링크2</a>
+				<a href="#">푸터링크3</a>
+			</div>
 		</div>
 	</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
+var lypop = {
+	welOpener: null,
+	welTarget: null,
+	launch: function(el){
+		welOpener = (event.target === document) ? $('#wrap') : $(event.target);
+		welTarget = $(el);
+		$(el).show().attr('tabindex','-1').trigger('focus').on('blur',function(){ $(this).removeAttr('tabindex','-1'); });
+	},
+	close: function(){
+		welOpener.trigger('focus');
+		welTarget.hide();
+	}
+}
 $(function(){
-	var initLypop = setTimeout(function(){
-		$('.lypop').show().trigger('focus');
-		$('#wrap').attr('aria-hidden','true');
-	}, 250);
-	$('.lypop').on('click','button',function(){
-		$('#wrap').removeAttr('aria-hidden').trigger('focus');
-		$(event.currentTarget).hide();
+	lypop.launch('#lypop1');
+	$('.lypop').on('click','.btn_close',function(){
+		lypop.close();
 	});
 });
 </script>
