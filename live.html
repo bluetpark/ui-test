@@ -52,6 +52,21 @@
 	<p class="time type2"><span class="blind">남은시간</span>1:01:16</p>
 </div>
 
+<div class="text-wrap">
+	<div class="timer_box" role="text">
+		<span class="blind">방송시간</span>
+		<!-- [D] 시간 갱신 .txt_timer 요소만 갱신 -->
+		<span class="txt_timer">
+			<span class="hour">10<span class="blind">시간</span></span>
+			<span aria-hidden="true">:</span>
+			<span class="min">13<span class="blind">분</span></span>
+			<span aria-hidden="true">:</span>
+			<span class="sec">48<span class="blind">초</span></span>
+		</span>
+		<span class="txt_remain">&nbsp;남음</span>
+	</div>
+</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
 var n = 0;
@@ -61,6 +76,14 @@ var timePrint = function(){
 	setTimeout(timePrint, 1000);
 }
 timePrint();
+
+var nn = 0;
+var timePrint2 = function(){
+	$('.txt_timer').html('<span class="hour">10<span class="blind">시간</span></span><span aria-hidden="true">:</span><span class="min">13<span class="blind">분</span></span><span aria-hidden="true">:</span><span class="sec">48<span class="blind">초</span></span>' + nn);
+	nn++;
+	setTimeout(timePrint2, 1000);
+}
+timePrint2();
 
 </script>
 
