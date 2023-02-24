@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>:focus-visible test</title>
+  <style>
+    body{margin:0}
+    input{margin:0;padding:0}
+    .test-wrap{
+      padding:20px;
+      border-top:1px solid #ccc;
+      background:#ffd;
+    }
+    input:checked + label{color:red;}
+    a:focus,
+    button:focus,
+    input:focus{outline:none;}
+    .is_visible a:focus-visible,
+    .is_visible button:focus-visible,
+    .is_visible input:focus-visible{outline:currentColor auto}
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <div class="test-wrap">
+      <a href="#">링크</a>
+      <br>
+      <button type="button">버튼</button>
+      <button type="button" readonly>비활성버튼</button>
+      <br>
+      <select><option>111</option><option>112</option></select>
+      <select readonly><option>111</option><option>112</option></select>
+      <br>
+      <input type="checkbox" id="test1"><label for="test1"> : 기본이다</label>
+      <br>
+      <input type="radio" id="test2" name="uiTest"><label for="test2"> : 기본 라디오1</label>
+      <input type="radio" id="test3" name="uiTest"><label for="test3"> : 기본 라디오2</label>
+    </div>
+    <div class="test-wrap is_visible">
+      <a href="#">링크</a>
+      <br>
+      <button type="button">버튼</button>
+      <button type="button" readonly>비활성버튼</button>
+      <br>
+      <select><option>111</option><option>112</option></select>
+      <select readonly><option>111</option><option>112</option></select>
+      <br>
+      <input type="checkbox" id="test11"><label for="test11"> : 기본이다</label>
+      <br>
+      <input type="radio" id="test12" name="uiTest2"><label for="test12"> : 기본 라디오1</label>
+      <input type="radio" id="test13" name="uiTest2"><label for="test13"> : 기본 라디오2</label>
+    </div>
+  </div>
+</body>
+</html>
