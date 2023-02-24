@@ -13,45 +13,103 @@
       background:#ffd;
     }
     input:checked + label{color:red;}
-    a:focus,
-    button:focus,
-    input:focus{outline:none;}
+    .is_invisible a:focus,
+    .is_invisible button:focus,
+    .is_invisible input:focus{outline:none;}
     .is_visible a:focus-visible,
     .is_visible button:focus-visible,
-    .is_visible input:focus-visible{outline:currentColor auto}
+    .is_visible input:focus-visible{outline:currentColor auto;}
+    .popup{display:none;position:fixed;top:0;right:0;bottom:0;left:0;}
+    .popup:before{display:block;width:100%;height:100%;background:rgba(0,0,0,0.3);content:'';}
+    .popup_cont{position:absolute;top:0;right:0;bottom:0;left:0;width:300px;height:180px;margin:auto;background:#fff;text-align:center;}
   </style>
 </head>
 <body>
 
   <div class="wrap">
     <div class="test-wrap">
+      <h1>기본</h1>
       <a href="#">링크</a>
       <br>
       <button type="button">버튼</button>
-      <button type="button" readonly>비활성버튼</button>
+      <button type="button" class="btn_open_popup">팝업 띄웟!</button>
+      <div class="popup" id="popup1">
+        <div class="popup_cont" tabindex="-1">
+          <h1>팝업이지</h1>
+          <p>팝업이야</p>
+          <button type="button" class="btn_close_popup">팝업 닫아!</button>
+        </div>
+      </div>
       <br>
       <select><option>111</option><option>112</option></select>
       <select readonly><option>111</option><option>112</option></select>
       <br>
-      <input type="checkbox" id="test1"><label for="test1"> : 기본이다</label>
+      <input type="checkbox" id="default_chk"><label for="default_chk"> : 기본이다</label>
       <br>
-      <input type="radio" id="test2" name="uiTest"><label for="test2"> : 기본 라디오1</label>
-      <input type="radio" id="test3" name="uiTest"><label for="test3"> : 기본 라디오2</label>
+      <input type="radio" id="default_rdo1" name="default_rdo"><label for="default_rdo1"> : 기본 라디오1</label>
+      <input type="radio" id="default_rdo2" name="default_rdo"><label for="default_rdo2"> : 기본 라디오2</label>
+    </div>
+    <div class="test-wrap is_invisible">
+      <h1>:focus outline:0</h1>
+      <a href="#">링크</a>
+      <br>
+      <button type="button">버튼</button>
+      <button type="button" class="btn_open_popup">팝업 띄웟!</button>
+      <div class="popup" id="popup2">
+        <div class="popup_cont" tabindex="-1">
+          <h1>팝업이지</h1>
+          <p>팝업이야</p>
+          <button type="button" class="btn_close_popup">팝업 닫아!</button>
+        </div>
+      </div>
+      <br>
+      <select><option>111</option><option>112</option></select>
+      <select readonly><option>111</option><option>112</option></select>
+      <br>
+      <input type="checkbox" id="invisible_chk"><label for="invisible_chk"> : 기본이다</label>
+      <br>
+      <input type="radio" id="invisible_rdo1" name="invisible_rdo"><label for="invisible_rdo1"> : 기본 라디오1</label>
+      <input type="radio" id="invisible_rdo2" name="invisible_rdo"><label for="invisible_rdo2"> : 기본 라디오2</label>
     </div>
     <div class="test-wrap is_visible">
+      <h1>:focus-visible outline:currentColor auto</h1>
       <a href="#">링크</a>
       <br>
       <button type="button">버튼</button>
-      <button type="button" readonly>비활성버튼</button>
+      <button type="button" class="btn_open_popup">팝업 띄웟!</button>
+      <div class="popup" id="popup3">
+        <div class="popup_cont" tabindex="-1">
+          <h1>팝업이지</h1>
+          <p>팝업이야</p>
+          <button type="button" class="btn_close_popup">팝업 닫아!</button>
+        </div>
+      </div>
       <br>
       <select><option>111</option><option>112</option></select>
       <select readonly><option>111</option><option>112</option></select>
       <br>
-      <input type="checkbox" id="test11"><label for="test11"> : 기본이다</label>
+      <input type="checkbox" id="visible_chk"><label for="visible_chk"> : 기본이다</label>
       <br>
-      <input type="radio" id="test12" name="uiTest2"><label for="test12"> : 기본 라디오1</label>
-      <input type="radio" id="test13" name="uiTest2"><label for="test13"> : 기본 라디오2</label>
+      <input type="radio" id="visible_rdo1" name="visible_rdo"><label for="visible_rdo1"> : 기본 라디오1</label>
+      <input type="radio" id="visible_rdo2" name="visible_rdo"><label for="visible_rdo2"> : 기본 라디오2</label>
     </div>
   </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+  $(function(){
+    var welOpener;
+    var welPopup;
+    $('.btn_open_popup').on('click',function(){
+      welOpener = $(this);
+      welPopup = welOpener.siblings('.popup');
+      welPopup.show().find('.popup_cont').trigger('focus');
+    });
+    $('.btn_close_popup').on('click',function(){
+      welOpener.trigger('focus');
+      welPopup.hide();
+    });
+  });
+  </script>
 </body>
 </html>
