@@ -6,25 +6,34 @@
   <title>:focus-visible test</title>
   <style>
     body{margin:0}
-    input{margin:0;padding:0}
+    input{margin:0;padding:0;}
     .test-wrap{
       padding:20px;
       border-top:1px solid #ccc;
       background:#ffd;
     }
     input:checked + label{color:red;}
-    .is_invisible a:focus,
-    .is_invisible button:focus,
-    .is_invisible input:focus{outline:none;}
+    .is_invisible a,
+    .is_invisible button,
+    .is_invisible select,
+    .is_invisible input,
+    .is_invisible textarea,
+    .is_visible a,
+    .is_visible button,
+    .is_visible select,
+    .is_visible input,
+    .is_visible textarea{outline:none;}
     .is_visible a:focus-visible,
     .is_visible button:focus-visible,
-    .is_visible input:focus-visible{outline:currentColor auto;}
+    .is_visible select:focus-visible,
+    .is_visible input:focus-visible,
+    .is_visible textarea:focus-visible{outline:currentColor auto;outline:-webkit-focus-ring-color auto;}
     .popup{display:none;position:fixed;top:0;right:0;bottom:0;left:0;}
     .popup:before{display:block;width:100%;height:100%;background:rgba(0,0,0,0.3);content:'';}
     .popup_cont{position:absolute;top:0;right:0;bottom:0;left:0;width:300px;height:180px;margin:auto;background:#fff;text-align:center;}
-    .is_invisible .popup_cont:focus{outline:none;}
-    .is_visible .popup_cont:focus{outline:none;}
-    .is_visible .popup_cont:focus-visible{outline:currentColor auto;}
+    .is_invisible .popup_cont,
+    .is_visible .popup_cont{outline:none;}
+    .is_visible .popup_cont:focus-visible{outline:currentColor auto;outline:-webkit-focus-ring-color;}
   </style>
 </head>
 <body>
@@ -51,6 +60,13 @@
       <br>
       <input type="radio" id="default_rdo1" name="default_rdo"><label for="default_rdo1"> : 기본 라디오1</label>
       <input type="radio" id="default_rdo2" name="default_rdo"><label for="default_rdo2"> : 기본 라디오2</label>
+      <br>
+      <input type="text">
+      <input type="number">
+      <input type="tel">
+      <input type="date">
+      <br>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
     </div>
     <div class="test-wrap is_invisible">
       <h1>:focus outline:0</h1>
@@ -73,9 +89,16 @@
       <br>
       <input type="radio" id="invisible_rdo1" name="invisible_rdo"><label for="invisible_rdo1"> : 기본 라디오1</label>
       <input type="radio" id="invisible_rdo2" name="invisible_rdo"><label for="invisible_rdo2"> : 기본 라디오2</label>
+      <br>
+      <input type="text">
+      <input type="number">
+      <input type="tel">
+      <input type="date">
+      <br>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
     </div>
     <div class="test-wrap is_visible">
-      <h1>:focus-visible outline:currentColor auto</h1>
+      <h1>:focus outline:0 + :focus-visible outline:currentColor auto</h1>
       <a href="#">링크</a>
       <br>
       <button type="button">버튼</button>
@@ -95,6 +118,13 @@
       <br>
       <input type="radio" id="visible_rdo1" name="visible_rdo"><label for="visible_rdo1"> : 기본 라디오1</label>
       <input type="radio" id="visible_rdo2" name="visible_rdo"><label for="visible_rdo2"> : 기본 라디오2</label>
+      <br>
+      <input type="text">
+      <input type="number">
+      <input type="tel">
+      <input type="date">
+      <br>
+      <textarea name="" id="" cols="30" rows="10"></textarea>
     </div>
   </div>
 
