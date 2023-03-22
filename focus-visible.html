@@ -22,7 +22,7 @@
     .is_visible button,
     .is_visible select,
     .is_visible input,
-    .is_visible textarea{outline:none;}
+    .is_visible textarea{outline:0;}
     .is_visible a:focus-visible,
     .is_visible button:focus-visible,
     .is_visible select:focus-visible,
@@ -32,13 +32,27 @@
     .popup:before{display:block;width:100%;height:100%;background:rgba(0,0,0,0.3);content:'';}
     .popup_cont{position:absolute;top:0;right:0;bottom:0;left:0;width:300px;height:180px;margin:auto;background:#fff;text-align:center;}
     .is_invisible .popup_cont,
-    .is_visible .popup_cont{outline:none;}
-    .is_visible .popup_cont:focus-visible{outline:currentColor auto;outline:-webkit-focus-ring-color;}
+    .is_visible .popup_cont{outline:0;}
+    .is_visible .popup_cont:focus-visible{outline:currentColor auto;outline:-webkit-focus-ring-color auto;}
+
+    .focus_test2:focus{outline-color:red;}
+    .focus_test3:focus-visible{outline-color:skyblue;}
+    .focus_test4:focus{outline-color:red;}
+    .focus_test4:focus-visible{outline-color:skyblue;}
+    .focus_test5:focus-visible{outline-color:skyblue;}
+    .focus_test5:focus{outline-color:red;}
   </style>
 </head>
 <body>
 
   <div class="wrap">
+    <div class="test-wrap">
+      <button type="button" class="focus_test1">default</button>
+      <button type="button" class="focus_test2">focus only</button>
+      <button type="button" class="focus_test3">focus visible only</button>
+      <button type="button" class="focus_test4">focus + focus visible</button>
+      <button type="button" class="focus_test5">focus visible + focus</button>
+    </div>
     <div class="test-wrap">
       <h1>기본</h1>
       <a href="#">링크</a>
