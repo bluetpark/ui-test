@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>초점 예제</title>
+  <style>
+    html,body{height:100%;}
+    body{margin:0;background-color:#42613e;}
+    img{width:100%;pointer-events:none;}
+    button{border:0;background-color:transparent;pointer-events:none;}
+    .blind{position:absolute;width:1px;height:1px;clip:rect(0 0 0 0);}
+    .wrap{display:flex;align-items:center;justify-content:center;height:100%;}
+    .box_btn{position:relative;width:500px;height:250px;background:#548d4c url(../img/background.png) no-repeat 50%;background-size:contain;}
+    .box_btn button{position:absolute;width:50px;}
+    .box_btn button span{display:block;color:#fff;font-weight:bold;text-align:center;}
+    .box_btn .btn_ant{top:180px;left:415px;}
+    .box_btn .btn_cat{top:79px;left:210px;}
+    .box_btn .btn_dog{top:175px;left:144px;}
+    .box_btn .btn_ham{top:115px;left:23px;}
+    .box_btn .btn_lion{top:125px;left:350px;}
+    .popup{display:none;}
+    .popup:before{position:fixed;top:0;right:0;bottom:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.3);content:'';}
+    .popup .popup_cont{position:fixed;top:0;right:0;bottom:0;left:0;width:300px;height:300px;margin:auto;z-index:1;}
+    .popup img{display:none;}
+    .popup .btn_close{position:absolute;top:10px;right:10px;width:30px;height:30px;background-color:rgba(0,0,0,0.5);}
+    .popup .btn_close:before,.popup .btn_close:after{position:absolute;top:50%;left:50%;width:4px;height:20px;margin:-10px 0 0 -2px;background-color:#fff;content:'';}
+    .popup .btn_close:before{transform:rotate(-45deg);}
+    .popup .btn_close:after{transform:rotate(45deg);}
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <div class="box_btn">
+      <button type="button" class="btn_ant" aria-haspopup="dialog"><img src="../img/ico_ant.png" alt=""><span>개미</span></button>
+      <button type="button" class="btn_cat" aria-haspopup="dialog"><img src="../img/ico_cat.png" alt=""><span>고양이</span></button>
+      <button type="button" class="btn_dog" aria-haspopup="dialog"><img src="../img/ico_dog.png" alt=""><span>시바</span></button>
+      <button type="button" class="btn_ham" aria-haspopup="dialog"><img src="../img/ico_ham.png" alt=""><span>햄스터</span></button>
+      <button type="button" class="btn_lion" aria-haspopup="dialog"><img src="../img/ico_lion.png" alt=""><span>사자</span></button>
+    </div>
+    <div class="popup">
+      <div class="popup_cont" role="dialog" tabindex="-1">
+        <img src="../img/pop_ant.jpg" alt="개미는 오늘도 열심히 일을 하네" style="display:none;">
+        <img src="../img/pop_cat.jpg" alt="이번달은 돈을 아껴써야 해요. 아껴써야한다고 이 새*야!" style="display:none;">
+        <img src="../img/pop_dog.jpg" alt="인간의 욕심은 끝이 없고. 같은 실수를 반복한다." style="display:none;">
+        <img src="../img/pop_ham.jpg" alt="어머, 저건 사야해" style="display:none;">
+        <img src="../img/pop_lion.jpg" alt="야 저거 사자" style="display:none;">
+        <button type="button" class="btn_close"><span class="blind">팝업 닫기</span></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+  $(function(){
+    $('body *').on('click',function(e){
+      e.preventDefault();
+    });
+    var welOpener;
+    var welPopup;
+    $('.box_btn').on('click','button',function(){
+      welOpener = $(this);
+      var idx = welOpener.index();
+      welPopup = $('.popup');
+      welPopup.show().find('img').eq(idx).show();
+      welPopup.find('.popup_cont').trigger('focus');
+    });
+    $('.btn_close').on('click',function(){
+      welOpener.trigger('focus');
+      welPopup.hide();
+      welPopup.find('img').hide();
+    });
+  });
+  </script>
+</body>
+</html>
